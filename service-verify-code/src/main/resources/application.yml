@@ -1,0 +1,12 @@
+server:
+  port: 8083
+eureka:
+  client:
+    service-url:
+      defaultZone : http://localhost:7900/eureka
+spring:
+  application:
+    name: service-verify
+  redis:
+    host: 192.168.211.23
+    port: 6379
