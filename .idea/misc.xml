@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/service-verify-code/pom.xml" />
         <option value="$PROJECT_DIR$/api-passenger/pom.xml" />
         <option value="$PROJECT_DIR$/internal-common/pom.xml" />
+        <option value="$PROJECT_DIR$/service-message/pom.xml" />
       </list>
     </option>
   </component>

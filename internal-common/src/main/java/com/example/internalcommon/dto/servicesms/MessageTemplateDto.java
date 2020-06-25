@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.Map;
 
 @Data
-public class SmsTemplateDto {
+public class MessageTemplateDto {
 	// 模板id
 	private String id;
 

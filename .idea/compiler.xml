@@ -12,6 +12,7 @@
         <module name="internal-common" />
         <module name="eureka" />
         <module name="NewTaxiOnline" />
+        <module name="service-message" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
