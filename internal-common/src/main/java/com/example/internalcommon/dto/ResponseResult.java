@@ -47,6 +47,7 @@ public class ResponseResult<T> implements Serializable {
      * @return ResponseResult实例
      */
     public static <T> ResponseResult fail(T data) {
+        System.out.println("fail了?");
         return new ResponseResult().setCode(CommonStatusEnum.INTERNAL_SERVER_EXCEPTION.getCode()).setMessage(CommonStatusEnum.INTERNAL_SERVER_EXCEPTION.getValue()).setData(data);
     }
 

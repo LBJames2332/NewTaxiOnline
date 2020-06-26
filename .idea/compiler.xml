@@ -11,6 +11,7 @@
         <module name="service-verify-code" />
         <module name="internal-common" />
         <module name="eureka" />
+        <module name="service-user-info" />
         <module name="NewTaxiOnline" />
         <module name="service-message" />
       </profile>
@@ -18,5 +19,11 @@
     <bytecodeTargetLevel>
       <module name="demo" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="api-passenger" options="-parameters" />
+      <module name="internal-common" options="" />
+    </option>
   </component>
 </project>

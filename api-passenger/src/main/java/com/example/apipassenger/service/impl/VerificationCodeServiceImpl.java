@@ -1,7 +1,7 @@
 package com.example.apipassenger.service.impl;
 
 
-import com.example.apipassenger.service.ServiceSmsRestTemplateService;
+import com.example.apipassenger.service.ServiceMessageRestTemplateService;
 import com.example.apipassenger.service.ServiceVerificationCodeRestTemplateService;
 import com.example.apipassenger.service.VerificationCodeService;
 import com.example.internalcommon.constant.CommonStatusEnum;
@@ -20,11 +20,11 @@ public class VerificationCodeServiceImpl implements VerificationCodeService {
     private ServiceVerificationCodeRestTemplateService serviceVerificationCodeRestTemplateService;
 
     @Autowired
-    private ServiceSmsRestTemplateService serviceSmsRestTemplateService;
+    private ServiceMessageRestTemplateService serviceMessageRestTemplateService;
 
     @Override
     public ResponseResult send(String phoneNumber) {
-
+        System.out.println(phoneNumber);
         // 获取验证码
         ResponseResult responseResult = serviceVerificationCodeRestTemplateService.generatorCode(IdentityConstant.PASSENGER,phoneNumber);
         VerifyCodeResponse verifyCodeResponse = null;
@@ -38,7 +38,7 @@ public class VerificationCodeServiceImpl implements VerificationCodeService {
 
         String code = verifyCodeResponse.getCode();
 
-        ResponseResult result = serviceSmsRestTemplateService.sendSms(phoneNumber,code);
+        ResponseResult result = serviceMessageRestTemplateService.sendMessage(phoneNumber,code);
         if (result.getCode() != CommonStatusEnum.SUCCESS.getCode()){
             return ResponseResult.fail("发送短信 失败");
         }

@@ -16,11 +16,11 @@ spring:
     #配置MySQL的驱动程序类
     driver-class-name: com.mysql.cj.jdbc.Driver
     #数据库连接地址
-    url: jdbc:mysql://localhost:3306/online-taxi-three?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://localhost:3306/online_taxi_test?characterEncoding=utf8&useSSL=false&&allowPublicKeyRetrieval=true&&serverTimezone=Asia/Shanghai
     #数据库连接用户名
     username: root
     #数据库连接密码
-    password: root
+    password: 18166452077
     #进行数据库连接池的配置
     dbcp2:
       #初始化提供的连接数

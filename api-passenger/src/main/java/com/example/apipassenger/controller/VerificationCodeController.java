@@ -5,10 +5,7 @@ import com.example.apipassenger.service.VerificationCodeService;
 import com.example.internalcommon.dto.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/verify-code")
@@ -19,7 +16,12 @@ public class VerificationCodeController {
 
     @PostMapping("/send")
     public ResponseResult send(@RequestBody @Validated ShortMsgRequest request){
-
+        System.out.println(request);
+        System.out.println("laile");
         return verificationCodeService.send(request.getPhoneNumber());
+    }
+    @GetMapping("/test")
+    public void test(){
+        System.out.println("可以吗?");
     }
 }

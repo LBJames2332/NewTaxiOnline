@@ -1,8 +1,8 @@
 package com.example.servicemessage.service.impl;
 
 import com.example.internalcommon.dto.ResponseResult;
-import com.example.internalcommon.dto.servicesms.SmsTemplateDto;
-import com.example.internalcommon.dto.servicesms.request.SmsSendRequest;
+import com.example.internalcommon.dto.servicesms.MessageTemplateDto;
+import com.example.internalcommon.dto.servicesms.request.MessageSendRequest;
 import com.example.servicemessage.constant.MessageStatusEnum;
 import com.example.servicemessage.dao.ServiceMessageRecordDao;
 import com.example.servicemessage.dao.ServiceMessageTemplateCustomDao;
@@ -36,16 +36,16 @@ public class MessageServiceImpl implements MessageService {
     private ServiceMessageRecordDao serviceMessageRecordDao;
 
     @Override
-    public ResponseResult sendSms(SmsSendRequest request) {
+    public ResponseResult sendMessage(MessageSendRequest request) {
         log.info(request.toString());
 
         for (String phoneNumber : request.getReceivers()) {
-            List<SmsTemplateDto> templates = request.getData();
+            List<MessageTemplateDto> templates = request.getData();
 
             ServiceMessageRecord sms = new ServiceMessageRecord();
             sms.setPhoneNumber(phoneNumber);
             // 81B*10 1024 1K 10*1024  1M
-            for (SmsTemplateDto template : templates) {
+            for (MessageTemplateDto template : templates) {
                 // 从DB加载模板内容至缓存
                 if (!templateMaps.containsKey(template.getId())) {
                     //此处注释掉的内容为，将db模板加载到内存

@@ -19,9 +19,9 @@ public class ServiceVerificationCodeRestTemplateServiceImpl implements ServiceVe
 
     @Override
     public ResponseResult generatorCode(int identity, String phoneNumber) {
-
-        String url = "http://service-verification-code/verify-code/generate/"+identity+"/"+phoneNumber;
-
+        System.out.println("其实我到这儿了");
+        String url = "http://service-verify/verify-code/generate/"+identity+"/"+phoneNumber;
+        System.out.println(url);
         ResponseResult result = restTemplate.exchange(url, HttpMethod.GET,new HttpEntity<Object>(null,null),ResponseResult.class).getBody();
 
         return result;
@@ -29,8 +29,8 @@ public class ServiceVerificationCodeRestTemplateServiceImpl implements ServiceVe
 
     @Override
     public ResponseResult verifyCode(int identity, String phoneNumber , String code) {
-
-        String url = "http://service-verification-code/verify-code/verify/";
+        System.out.println("其实我到这儿了2");
+        String url = "http://service-verify/verify-code/verify/";
 
         VerifyCodeRequest request = new VerifyCodeRequest();
         request.setCode(code);

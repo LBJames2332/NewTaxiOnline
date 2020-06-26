@@ -1,7 +1,7 @@
 package com.example.servicemessage.controller;
 
 import com.example.internalcommon.dto.ResponseResult;
-import com.example.internalcommon.dto.servicesms.request.SmsSendRequest;
+import com.example.internalcommon.dto.servicesms.request.MessageSendRequest;
 import com.example.servicemessage.service.MessageService;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.json.JSONObject;
@@ -17,14 +17,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class SendController {
 	
 	@Autowired
-	private MessageService smsService;
+	private MessageService messageService;
 
-	@RequestMapping(value = "/sms-template",method = RequestMethod.POST)
-    public ResponseResult send(@RequestBody SmsSendRequest smsSendRequest){
+	@RequestMapping(value = "/message-template",method = RequestMethod.POST)
+    public ResponseResult send(@RequestBody MessageSendRequest messageSendRequest){
 		//输出收到的参数内容
-        JSONObject param = JSONObject.fromObject(smsSendRequest);
-        log.info("/send/alisms-template   request："+param.toString());
-        return smsService.sendSms(smsSendRequest);
+        JSONObject param = JSONObject.fromObject(messageSendRequest);
+        log.info("/send/alimessage-template   request："+param.toString());
+        return messageService.sendMessage(messageSendRequest);
     }
 	
 }

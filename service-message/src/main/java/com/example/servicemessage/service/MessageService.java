@@ -2,7 +2,7 @@ package com.example.servicemessage.service;
 
 
 import com.example.internalcommon.dto.ResponseResult;
-import com.example.internalcommon.dto.servicesms.request.SmsSendRequest;
+import com.example.internalcommon.dto.servicesms.request.MessageSendRequest;
 
 public interface MessageService {
 	/**
@@ -10,5 +10,5 @@ public interface MessageService {
 	 * @param request
 	 * @return
 	 */
-	public ResponseResult sendSms(SmsSendRequest request);
+	public ResponseResult sendMessage(MessageSendRequest request);
 }

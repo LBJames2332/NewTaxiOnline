@@ -6,4 +6,4 @@ eureka:
       defaultZone : http://localhost:7900/eureka
 spring:
   application:
-    name: service-verify-code
+    name: api-passenger

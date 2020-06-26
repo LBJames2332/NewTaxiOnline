@@ -1,13 +1,12 @@
 package com.example.apipassenger.request;
 
 import lombok.Data;
-import org.springframework.validation.annotation.Validated;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
-
 @Data
+
 public class ShortMsgRequest {
     /**
      * 自定义 校验手机号的注解

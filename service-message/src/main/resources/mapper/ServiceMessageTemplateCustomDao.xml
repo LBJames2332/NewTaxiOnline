@@ -3,9 +3,9 @@
 <mapper namespace="com.example.servicemessage.dao.ServiceMessageTemplateCustomDao" >
 
     <!-- 根据templateId查询模板 -->
-    <select id="selectByTemplateId" resultMap="com.example.servicemessage.dao.ServiceMessageTemplateCustomDao.BaseResultMap" parameterType="java.lang.String" >
+    <select id="selectByTemplateId" resultMap="com.example.servicemessage.dao.ServiceMessageTemplateDao.BaseResultMap" parameterType="java.lang.String" >
         select
-        <include refid="com.example.servicemessage.dao.ServiceMessageTemplateCustomDao.Base_Column_List" />
+        <include refid="com.example.servicemessage.dao.ServiceMessageTemplateDao.Base_Column_List" />
         from service_sms_template
         where template_id = #{templateId}
     </select>
