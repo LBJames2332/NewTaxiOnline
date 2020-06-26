@@ -22,6 +22,7 @@ public class SendController {
 	@RequestMapping(value = "/message-template",method = RequestMethod.POST)
     public ResponseResult send(@RequestBody MessageSendRequest messageSendRequest){
 		//输出收到的参数内容
+
         JSONObject param = JSONObject.fromObject(messageSendRequest);
         log.info("/send/alimessage-template   request："+param.toString());
         return messageService.sendMessage(messageSendRequest);

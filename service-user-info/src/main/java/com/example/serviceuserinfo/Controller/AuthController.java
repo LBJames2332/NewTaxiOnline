@@ -14,11 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
  * 权限控制类
  * 此类对用户的登录、权限和登出进行控制。
  *
- *
- *
- * @author 马士兵教育:zhangyiming
- * @author 马士兵教育:chaopengfei
- *
  * @date 2020/06/06
  */
 

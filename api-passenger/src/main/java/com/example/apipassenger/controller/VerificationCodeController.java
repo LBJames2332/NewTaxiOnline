@@ -16,8 +16,6 @@ public class VerificationCodeController {
 
     @PostMapping("/send")
     public ResponseResult send(@RequestBody @Validated ShortMsgRequest request){
-        System.out.println(request);
-        System.out.println("laile");
         return verificationCodeService.send(request.getPhoneNumber());
     }
     @GetMapping("/test")

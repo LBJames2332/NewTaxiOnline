@@ -25,7 +25,6 @@ public class JwtUtil {
         String compactJws = Jwts.builder()
                 .setSubject(subject)
                 .setIssuedAt(issueDate)
-//                .setExpiration(issueDate + xxx)
                 .signWith(io.jsonwebtoken.SignatureAlgorithm.HS512, secret)
                 .compact();
         return compactJws;

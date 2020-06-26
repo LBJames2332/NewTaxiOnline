@@ -24,7 +24,6 @@ public class VerificationCodeServiceImpl implements VerificationCodeService {
 
     @Override
     public ResponseResult send(String phoneNumber) {
-        System.out.println(phoneNumber);
         // 获取验证码
         ResponseResult responseResult = serviceVerificationCodeRestTemplateService.generatorCode(IdentityConstant.PASSENGER,phoneNumber);
         VerifyCodeResponse verifyCodeResponse = null;
@@ -37,7 +36,6 @@ public class VerificationCodeServiceImpl implements VerificationCodeService {
         }
 
         String code = verifyCodeResponse.getCode();
-
         ResponseResult result = serviceMessageRestTemplateService.sendMessage(phoneNumber,code);
         if (result.getCode() != CommonStatusEnum.SUCCESS.getCode()){
             return ResponseResult.fail("发送短信 失败");

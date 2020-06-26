@@ -41,7 +41,7 @@ public class PassengerUserServiceImpl implements PassengerUserService {
 
         long passengerId = passengerUserInfo.getId();
         // 生成 token 的时候，如果要服务端控制，要把它 存到 redis中，在设置过期时间。
-
+        System.out.println(new Date());
         String token = JwtUtil.createToken(passengerId+"", new Date());
         // 存入redis，设置过期时间。
         BoundValueOperations<String, String> stringStringBoundValueOperations = redisTemplate.boundValueOps(RedisKeyPrefixConstant.PASSENGER_LOGIN_TOKEN_APP_KEY_PRE + passengerId);

@@ -17,7 +17,7 @@ public class ServicePassengerUserServiceImpl implements ServicePassengerUserServ
 
     @Override
     public ResponseResult login(String passengerPhone) {
-        String url = "http://service-passenger-user/auth/login";
+        String url = "http://service-user-info/auth/login";
 
         LoginRequest loginRequest = new LoginRequest();
         loginRequest.setPassengerPhone(passengerPhone);
